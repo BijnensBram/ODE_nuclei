@@ -1,3 +1,7 @@
 *.o
 *.txt
 *.exe
+*.pyc
+function.py
+setup.py
+simualtion.py
