@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
 
 	const double sigmaN = 1;
 	const double sigmaS = -1;
-	const double sigmaP = 1;
+	const double sigmaP = -1;
 
 	const double cN = 50;
 	const double cS = 50;
@@ -22,12 +22,12 @@ int main(int argc, char *argv[]){
 	const double MS = 5;
 	const double MP = 200;
 
-	const int N = 10;
+	const int N = 100;
 	const double lx = 250;
 	const double ly = 50;
 	const double dref = 40;
-	const double tmax = 100;
-	const double dt = 0.001;
+	const double tmax = 0.1;
+	const double dt = 0.01;
 	
 	/* random number generators */ 
 	std::random_device dev;
@@ -71,10 +71,10 @@ int main(int argc, char *argv[]){
 				dXdt[i] += forcef(sigmaN,alphaN,d,dref,cN)*xpart;
 				dYdt[i] += forcef(sigmaN,alphaN,d,dref,cN)*ypart;
 			}
-			dXdt[i] += forceg(sigmaS,MS,alphaS, x[i],dref,cS);
+			dXdt[i] += forceg(sigmaS,MS,alphaS, -x[i],dref,cS);
 			dXdt[i] += forceg(sigmaS,MS,alphaS, lx-x[i],dref,cS);
-
-			dYdt[i] += forceg(sigmaP,MP,alphaP, y[i],dref,cP);
+			
+			dYdt[i] += forceg(sigmaP,MP,alphaP, -y[i],dref,cP);
 			dYdt[i] += forceg(sigmaP,MP,alphaP, ly-y[i],dref,cP);
 		}
 		for (int i=0; i < N; i++){
