@@ -5,10 +5,33 @@
 #include <algorithm>   
 #include "force.h"
 #include "move.h"
-#include "constants.h"
 
 int main(int argc, char *argv[]){
+	/* defining constants */
+	const double alphaN = -1;
+	const double alphaS = -1;
+	const double alphaP = -1;
+
+	const double sigmaN = 1;
+	const double sigmaS = 1;
+	const double sigmaP = 1;
+
+	const int N = 15;
+	const double lx = 250;
+	const double ly = 100;
+	const double dref = 40;
+	const double tmax = 2000;
+	const double r = 7;
+	const double Qe = 5000;
 	
+	/* taking user input */
+	const double cN = std::stod(argv[2]);
+	const double cS = std::stod(argv[3]);
+	const double cP = std::stod(argv[4]);
+
+	const double MS = std::stod(argv[5]);
+	const double MP = std::stod(argv[6]);
+
 	/* random number generators */ 
 	std::random_device dev;
 	std::mt19937 rng(dev());
