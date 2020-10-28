@@ -7,4 +7,4 @@ To Do:
 	- [ ] Improve efficiency
 	- [ ] clean up code
 	- [x] add run script
-	- [ ] make useful plotfile
+	- [x] make useful plotfile
