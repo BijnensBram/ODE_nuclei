@@ -2,6 +2,7 @@
 *.txt
 *.exe
 *.pyc
+*.pdf
 function.py
 setup.py
 simualtion.py
