@@ -9,6 +9,8 @@
 # 5) MS
 # 6) MP
 
+make 
+
 declare -a cNrange=(10 20 50 100 250)
 declare -a cSrange=(10 20 50 100)
 declare -a cPrange=(10 20 50 100 250)

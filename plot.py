@@ -25,5 +25,5 @@ for cN in cNrange:
                         ax.add_artist(plt.Circle((x[i],y[i]),7))
                     plt.xlim([0,250])
                     plt.ylim([0,100])
-                    plt.savefig(".pdf")
-                    plt.show()
+                    plt.savefig(plotname)
+                    plt.close()
