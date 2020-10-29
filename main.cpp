@@ -20,7 +20,7 @@ int main(int argc, char *argv[]){
 	const double lx = 250;
 	const double ly = 100;
 	const double dref = 40;
-	const double tmax = 2000;
+	const double tmax = 10000;
 	const double r = 7;
 	const double Qe = 5000;
 	

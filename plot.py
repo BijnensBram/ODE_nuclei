@@ -6,6 +6,7 @@ cSrange=[10, 20, 50, 100]
 cPrange=[10, 20, 50, 100, 250]
 MSrange=[10, 20, 30, 50, 100]
 MPrange=[10, 20, 30, 50, 100]
+figfolder="./fig2"
 
 for cN in cNrange:
     for cS in cSrange:
@@ -14,7 +15,7 @@ for cN in cNrange:
                 for MP in MPrange:
                     filenamex="./data/xdata_cN="+str(cN)+"_cS="+str(cS)+"_cP="+str(cP)+"_MS="+str(MS)+"_MP="+str(MP)+".txt"
                     filenamey="./data/ydata_cN="+str(cN)+"_cS="+str(cS)+"_cP="+str(cP)+"_MS="+str(MS)+"_MP="+str(MP)+".txt"
-                    plotname="./fig/cN="+str(cN)+"_cS="+str(cS)+"_cP="+str(cP)+"_MS="+str(MS)+"_MP="+str(MP)+".pdf"
+                    plotname=figfolder+"/cN="+str(cN)+"_cS="+str(cS)+"_cP="+str(cP)+"_MS="+str(MS)+"_MP="+str(MP)+".pdf"
                     x = np.loadtxt(filenamex,delimiter=";")
                     y = np.loadtxt(filenamey,delimiter=";")
                     
