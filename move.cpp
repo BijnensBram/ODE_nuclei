@@ -29,16 +29,4 @@ void update(double &x, double &y, double dxdt, double dydt,double dt,double lx, 
 	/* updating position */
 	x += dxdt*dt;
 	y += dydt*dt;
-	/* checking that particle did not leave cell */
-	/* not necessary anymore due to variable dt*/
-	/* if (x < 0){ */
-	/* 	x = r; */
-	/* }else if(x> lx){ */
-	/* 	x=lx-r; */
-	/* } */
-	/* if (y < 0){ */
-	/* 	y = r; */
-	/* }else if(y> ly){ */
-	/* 	y=ly-r; */
-	/* } */
 }
