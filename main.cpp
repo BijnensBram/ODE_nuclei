@@ -55,12 +55,10 @@ int main(int argc, char *argv[]){
 		y[i] = inity(rng);
 	}
 
-	/* /1* defining output files *1/ */
-	/* std::ofstream File; */
-	/* std::string xfilename; */
-	/* std::string yfilename; */
-	/* xfilename = std::string("data/xdata_") + argv[1] + std::string(".txt"); */
-	/* yfilename = std::string("data/ydata_") + argv[1] + std::string(".txt"); */
+	/* defining output files */
+	std::ofstream File;
+	std::string filename;
+	filename = std::string("data/data_") + argv[1] + std::string(".txt");
 	
 	double t = 0;
 	double dt;
@@ -103,6 +101,7 @@ int main(int argc, char *argv[]){
 		mindy = *std::min_element(dYdt,dYdt+N);
 		
 		dt = get_max(maxdx,maxdy,mindx,mindy,max);
+	
 		
 		/* updateting positions */
 		for (int i=0; i < N; i++){
@@ -111,9 +110,5 @@ int main(int argc, char *argv[]){
 		/* updating time */
 		t +=dt;
 	}
-	for (int i=0; i < N-1; i++){
-		std::cout << x[i] << ";" << y[i] << ";";
-	}
-	std::cout << x[N-1] << ";" << y[N-1] << std::endl;
 	return 0;
 }
