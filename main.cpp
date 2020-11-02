@@ -110,5 +110,11 @@ int main(int argc, char *argv[]){
 		/* updating time */
 		t +=dt;
 	}
+	File.open(filename.c_str(),std::ios_base::app);
+	for (int i=0; i < N-1; i++){
+		File << x[i] << ";" << y[i] << ";";
+	}
+	File << x[N-1] << ";" << y[N-1] << std::endl;
+	File.close();
 	return 0;
 }
