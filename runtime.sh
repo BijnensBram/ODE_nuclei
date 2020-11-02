@@ -17,7 +17,7 @@ declare -a cPrange=(10 10)
 declare -a MSrange=(10 10)
 declare -a MPrange=(10 10)
 
-N=$1
+# N=$1
 for cN in "${cNrange[@]}"
 do
 	for cS in "${cSrange[@]}"
@@ -28,7 +28,7 @@ do
 			do
 				for MP in "${MPrange[@]}"
 				do
-					((i=i%N)); ((i++==0)) && wait
+					# ((i=i%N)); ((i++==0)) && wait
 					# filename=cN=$cN\_cS=$cS\_cP=$cP\_MS=$MS\_MP=$MP
 					filename=test.txt
 					./ode $filename $cN $cS $cP $MS $MP &
