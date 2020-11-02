@@ -25,12 +25,12 @@ int main(int argc, char *argv[]){
 	const double Qe = 5000;
 	
 	/* taking user input */
-	const double cN = std::stod(argv[2]);
-	const double cS = std::stod(argv[3]);
-	const double cP = std::stod(argv[4]);
+	const double cN = std::stod(argv[1]);
+	const double cS = std::stod(argv[2]);
+	const double cP = std::stod(argv[3]);
 
-	const double MS = std::stod(argv[5]);
-	const double MP = std::stod(argv[6]);
+	const double MS = std::stod(argv[4]);
+	const double MP = std::stod(argv[5]);
 
 	/* random number generators */ 
 	std::random_device dev;
@@ -55,12 +55,12 @@ int main(int argc, char *argv[]){
 		y[i] = inity(rng);
 	}
 
-	/* defining output files */
-	std::ofstream File;
-	std::string xfilename;
-	std::string yfilename;
-	xfilename = std::string("data/xdata_") + argv[1] + std::string(".txt");
-	yfilename = std::string("data/ydata_") + argv[1] + std::string(".txt");
+	/* /1* defining output files *1/ */
+	/* std::ofstream File; */
+	/* std::string xfilename; */
+	/* std::string yfilename; */
+	/* xfilename = std::string("data/xdata_") + argv[1] + std::string(".txt"); */
+	/* yfilename = std::string("data/ydata_") + argv[1] + std::string(".txt"); */
 	
 	double t = 0;
 	double dt;
@@ -111,19 +111,9 @@ int main(int argc, char *argv[]){
 		/* updating time */
 		t +=dt;
 	}
-
-	File.open(xfilename.c_str(),std::ios_base::app);
 	for (int i=0; i < N-1; i++){
-		File << x[i] << ";";
+		std::cout << x[i] << ";" << y[i] << ";";
 	}
-	File << x[N-1] << std::endl;
-	File.close();
-	
-	File.open(yfilename.c_str(),std::ios_base::app);
-	for (int i=0; i < N-1; i++){
-		File << y[i] << ";";
-	}
-	File << y[N-1] << std::endl;
-	File.close();
+	std::cout << x[N-1] << ";" << y[N-1] << std::endl;
 	return 0;
 }
