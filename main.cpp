@@ -57,10 +57,8 @@ int main(int argc, char *argv[]){
 
 	/* defining output files */
 	std::ofstream File;
-	std::string xfilename;
-	std::string yfilename;
-	xfilename = std::string("data/xdata_") + argv[1] + std::string(".txt");
-	yfilename = std::string("data/ydata_") + argv[1] + std::string(".txt");
+	std::string filename;
+	filename = std::string("data/data_") + argv[1] + std::string(".txt");
 	
 	double t = 0;
 	double dt;
@@ -103,6 +101,7 @@ int main(int argc, char *argv[]){
 		mindy = *std::min_element(dYdt,dYdt+N);
 		
 		dt = get_max(maxdx,maxdy,mindx,mindy,max);
+	
 		
 		/* updateting positions */
 		for (int i=0; i < N; i++){
@@ -111,19 +110,11 @@ int main(int argc, char *argv[]){
 		/* updating time */
 		t +=dt;
 	}
-
-	File.open(xfilename.c_str(),std::ios_base::app);
+	File.open(filename.c_str(),std::ios_base::app);
 	for (int i=0; i < N-1; i++){
-		File << x[i] << ";";
+		File << x[i] << ";" << y[i] << ";";
 	}
-	File << x[N-1] << std::endl;
-	File.close();
-	
-	File.open(yfilename.c_str(),std::ios_base::app);
-	for (int i=0; i < N-1; i++){
-		File << y[i] << ";";
-	}
-	File << y[N-1] << std::endl;
+	File << x[N-1] << ";" << y[N-1] << std::endl;
 	File.close();
 	return 0;
 }
